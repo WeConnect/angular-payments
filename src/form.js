@@ -48,9 +48,9 @@ angular.module('angularPayments')
 
         var button = form.find('button');
         button.prop('disabled', true);
+        var enableButton = function () { button.prop('disabled', false); }
 
         if(form.hasClass('ng-valid')) {
-          var enableButton = function () { button.prop('disabled', false); }
           scope.$apply(function() {
             scope[attr.paymentForm].apply(scope, [_getDataToSend(scope), enableButton]);
           });
