@@ -32,7 +32,7 @@ angular.module('angularPayments')
   return {
     restrict: 'A',
     link: function(scope, elem, attr) {
-
+      var exp;
       var form = angular.element(elem);
 
       form.bind('submit', function() {
