@@ -1,15 +1,15 @@
 angular.module('angularPayments')
 
 .directive('paymentForm', ['$window', '$parse', 'Common', function($window, $parse, Common) {
-    
-  _getDataToSend = function(data){
-           
-    var possibleKeys = ['number', 'expMonth', 'expYear', 
-                    'cvc', 'name','addressLine1', 
+
+  var _getDataToSend = function(data){
+
+    var possibleKeys = ['number', 'expMonth', 'expYear',
+                    'cvc', 'name','addressLine1',
                     'addressLine2', 'addressCity',
                     'addressState', 'addressZip',
                     'addressCountry']
-    
+
     var camelToSnake = function(str){
       return str.replace(/([A-Z])/g, function(m){
         return "_"+m.toLowerCase();

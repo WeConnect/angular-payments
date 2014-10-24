@@ -98,9 +98,7 @@ angular.module('angularPayments')
           typeModel.assign(scope, card.type);
       }
 
-      ret = (ref = num.length, __indexOf.call(card.length, ref) >= 0) && (card.luhn === false || _luhnCheck(num));
-
-      return ret;
+      return (ref = num.length, __indexOf.call(card.length, ref) >= 0) && (card.luhn === false || _luhnCheck(num));
   }
 
   _validators['expiry'] = function(val){
